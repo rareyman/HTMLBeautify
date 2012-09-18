@@ -1,0 +1,60 @@
+[
+{
+    "caption": "Edit",
+    "mnemonic": "E",
+    "id": "edit",
+    "children":
+    [
+
+      {
+        "caption": "HTMLBeautify",
+        "id": "HTMLBeautify",
+        "children":
+        [
+					{"caption":"-"},
+					{
+						"command": "html_beautify",
+						"id":"html_beautify",
+						"caption":"Beautify HTML"
+					}
+        ]
+      }
+    ]
+  },
+  {
+		"caption": "Preferences",
+		"mnemonic": "n",
+		"id": "preferences",
+		"children":
+		[
+			{
+				"caption": "Package Settings",
+				"mnemonic": "P",
+				"id": "package-settings",
+				"children":
+				[
+					{
+						"caption": "HTMLBeautify",
+						"children":
+						[
+							{
+								"command": "open_file", "args":
+								{
+										"file": "${packages}/HTMLBeautify/HTMLBeautify.sublime-settings"
+								},
+								"caption": "Settings – Default"
+							},
+							{
+								"command": "open_file", "args":
+								{
+										"file": "${packages}/User/HTMLBeautify.sublime-settings"
+								},
+								"caption": "Settings – User"
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]

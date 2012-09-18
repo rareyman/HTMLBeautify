@@ -1,0 +1,6 @@
+[
+	{
+		"keys": ["super+alt+shift+f"],
+		"command": "html_beautify"
+	}
+]
