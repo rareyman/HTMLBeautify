@@ -1,0 +1,20 @@
+{
+	"schema_version": "1.2",
+	"packages": [
+		{
+			"name": "HTMLBeautify",
+			"description": "A plugin that formats (indents) html source code. It makes code easier for humans to read.",
+			"author": "Ross A. Reyman",
+			"homepage": "https://github.com/rareyman/HTMLBeautify.git",
+			"last_modified": "2012-09-18",
+			"platforms": {
+				"*": [
+					{
+						"version": "0.5",
+						"url": "https://github.com/rareyman/HTMLBeautify/zipball/master"
+					}
+				]
+			}
+		}
+	]
+}
