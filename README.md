@@ -19,7 +19,7 @@ It makes code easier for humans to read.
 
 ## Installation
 
-* Downnload the zip, re-name it to: `HTMLBeautify`, then put it your Sublime Text 2 Packages folder (directory).
+* Downnload the zip, re-name resulting folder to: `HTMLBeautify`, then put the folder into your Sublime Text 2 Packages folder.
 
 (Package Control Install later?)
 
