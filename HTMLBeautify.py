@@ -4,7 +4,7 @@
 # (Inspired by fhtml.pl by John Watson)
 # by Ross A. Reyman on 09/10/12
 # url:			http://reyman.name/
-# e-mail:		ross@reyman.name
+# e-mail:		ross[at]reyman[dot]name
 
 import sublime, sublime_plugin, re
 
