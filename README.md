@@ -15,7 +15,7 @@ It makes code easier for humans to read.
 * This script assumes an effort has been made by the user to expand tags to different lines. This script will **not**  automatically expand minimized/compressed code—it will only try to “clean-up” code that needs to be re-indented
 * This script uses `\t` characters to create indentation levels and spacing—ST2 appears to honor whether the user prefers spaces or tabs in ST2 settings and adjusts accordingly (TODO: Should this be addressed in the script?)
 * Use `tag_pos_inline` setting to define tags that _might_ appear on one line
-* If using possible inline tags (`tag_pos_inline`), it is best to use self-closing tags (XHTML-style)
+* If using possible inline tags (`tag_pos_inline`), this script works best if you use self-closing tags (XHTML-style)
 
 ## Installation
 
