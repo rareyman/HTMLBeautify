@@ -6,11 +6,11 @@
 
 	// the contents of these tag blocks will be indented (add/remove as desired)
 	"tag_indent":
-	"<html|<head|<body|<div|<nav|<ul|<ol|<dl|<li|<table|<thead|<tbody|<tr|<th|<td|<blockquote|<select|<form|<option|<optgroup|<fieldset|<legend|<label|<header|<section|<aside|<footer|<figure",
+	"<html|<head|<body|<div|<nav|<ul|<ol|<dl|<li|<table|<thead|<tbody|<tr|<th|<td|<blockquote|<select|<form|<option|<optgroup|<fieldset|<legend|<label|<header|<section|<aside|<footer|<figure|<video",
 
 	// this signals when tags should be unindented (see tags above)
 	"tag_unindent":
-	"</html|</head|</body|</div|</nav|</ul|</ol|</dl|</li|</table|</thead|</tbody|</tr|</th|</td|</blockquote|</select|</form|</option|</optgroup|</fieldset|</legend|</label|</header|</section|</aside|</footer|</figure",
+	"</html|</head|</body|</div|</nav|</ul|</ol|</dl|</li|</table|</thead|</tbody|</tr|</th|</td|</blockquote|</select|</form|</option|</optgroup|</fieldset|</legend|</label|</header|</section|</aside|</footer|</figure|</video",
 
 	// these tags can sometimes be on one line (see example below)
 	"tag_pos_inline":
@@ -23,7 +23,5 @@
 	// 		<p>expanded</p>
 	// 	</li>
 	// </ul>
-
-
 
 }
