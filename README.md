@@ -1,6 +1,7 @@
-# HTMLBeautify (for Sublime Text 2) v0.5
+# HTMLBeautify (for Sublime Text 2) v0.6
 * (Inspired by fhtml.pl by John Watson)
-* by Ross A. Reyman on 09/20/12
+* by Ross A. Reyman
+* 05 March 2013
 * url:			http://reyman.name/
 * e-mail:		ross[at]reyman[dot]name
 
@@ -15,13 +16,12 @@ It makes code easier for humans to read.
 * This script assumes an effort has been made by the user to expand tags to different lines. This script will **not**  automatically expand minimized/compressed code—it will only try to “clean-up” code that needs to be re-indented
 * This script uses `\t` characters to create indentation levels and spacing—ST2 appears to honor whether the user prefers spaces or tabs in ST2 settings and adjusts accordingly (TODO: Should this be addressed in the script?)
 * Use `tag_pos_inline` setting to define tags that _might_ appear on one line
-* If using possible inline tags (`tag_pos_inline`), this script works best if you use self-closing tags (XHTML-style)
 
 ## Installation
 
 * Downnload the zip, re-name resulting folder to: `HTMLBeautify`, then put the folder into your Sublime Text 2 Packages folder.
 
-(Package Control Install later?)
+(TODO: Package Control Install)
 
 ## Usage
 * Open a file containing HTML.
