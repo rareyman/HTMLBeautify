@@ -96,7 +96,7 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 
 				rawcode_flat = rawcode_flat + tmp + '\n'
 
-			print rawcode_flat
+			# print rawcode_flat
 
 			# put each line into a list (again)
 			rawcode_flat_list = re.split('\n', rawcode_flat)
