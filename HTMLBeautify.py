@@ -136,6 +136,10 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 						tmp = ("\t" * indent_level) + item
 
 				beautified_code = beautified_code + tmp + '\n'
+				
+			# remove leading and trailing white space
+			beautified_code = beautified_code.strip()
+            	
 			# print beautified_code
 
 			# replace the code in Sublime Text
