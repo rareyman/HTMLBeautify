@@ -1,7 +1,7 @@
 # HTMLBeautify (for Sublime Text 2) v0.6
 - (Inspired by fhtml.pl by John Watson)
 - by Ross A. Reyman
-- 11 March 2013
+- 11 April 2013
 - url:			[http://reyman.name/](http://reyman.name/)
 - e-mail:		ross[at]reyman[dot]name
 
@@ -14,8 +14,21 @@ It makes code easier for humans to read.
 
 ## Notes
 - This script assumes an effort has been made by the user to expand tags to different lines. This script will **not**  automatically expand minimized/compressed code—it will only try to “clean-up” code that needs to be re-indented
-- This script uses `\t` characters to create indentation levels and spacing—ST2 appears to honor whether the user prefers spaces or tabs in ST2 settings and adjusts accordingly (TODO: Should this be addressed in the script?)
-- Use `tag_pos_inline` setting to define tags that _might_ appear on one line
+- Currently, this script chokes a bit with inline comments.
+	- For example:
+
+		`<div class="something"> <!-- HTMLBeautify will ignore this line since it is inline -->`
+	- So, a workaround is to keep comments on their own lines:
+
+		`<!-- this comment is ok -->`
+    
+        `<div class="something">`
+
+        `<!-- this comment is ok too -->`
+	- (TODO: Fix this!)
+
+- This script uses `\t` characters to create indentation levels and spacing—ST2 appears to honor whether the user prefers spaces or tabs in ST2 settings and adjusts accordingly.
+- Use `tag_pos_inline` setting to define tags that _might_ appear on one line.
 - Windows Users: You **must** restart Sublime Text 2 to complete the installation.
 
 ## Installation (Package Control)
@@ -24,7 +37,7 @@ If you have [Package Control](http://wbond.net/sublime_packages/package_control/
 - Open the Command Palette (Tools > Command Palette…)
 - Search for and choose "Package Control: Install Package" (give it a few seconds to return a list of available packages)
 - Search for "HTMLBeautify" and install.
-- Windows users will need to restart Sublime Text 2 to finish installation.
+- Windows users will need to restart Sublime Text 2 to finish the installation.
 
 ## Installation (Manual)
 - Download the zip, re-name resulting folder to: `HTMLBeautify`, then put the folder into your Sublime Text 2 Packages folder.
