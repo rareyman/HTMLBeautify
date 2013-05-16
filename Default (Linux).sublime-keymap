@@ -1,3 +1,6 @@
 [
-
+  {
+		"keys": ["ctrl+alt+shift+f"],
+		"command": "html_beautify"
+	}
 ]
