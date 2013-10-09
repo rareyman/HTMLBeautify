@@ -68,17 +68,17 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 				if item == "":
 					continue
 				# ignore raw code
-				if re.search(tag_raw_flat_closing, item):
+				if re.search(tag_raw_flat_closing, item, re.IGNORECASE):
 					tmp = item.strip()
 					is_block_raw = False
-				elif re.search(tag_raw_flat_opening, item):
+				elif re.search(tag_raw_flat_opening, item, re.IGNORECASE):
 					tmp = item.strip()
 					is_block_raw = True
 				# find ignored blocks and retain indentation, otherwise: strip whitespace
-				if re.search(ignored_tag_closing, item):
+				if re.search(ignored_tag_closing, item, re.IGNORECASE):
 					tmp = item.strip()
 					is_block_ignored = False
-				elif re.search(ignored_tag_opening, item):
+				elif re.search(ignored_tag_opening, item, re.IGNORECASE):
 					# count tabs used in ignored tags (for use later)
 					ignored_block_tab_count = item.count('\t')
 					tmp = item.strip()
@@ -111,21 +111,21 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 
 			for item in rawcode_flat_list:
 				# if a one-line, inline tag, just process it
-				if re.search(tag_pos_inline, item):
+				if re.search(tag_pos_inline, item, re.IGNORECASE):
 					tmp = ("\t" * indent_level) + item
 				# if unindent, move left
-				elif re.search(tag_unindent, item):
+				elif re.search(tag_unindent, item, re.IGNORECASE):
 					indent_level = indent_level - 1
 					tmp = ("\t" * indent_level) + item
 				# if indent, move right
-				elif re.search(tag_indent, item):
+				elif re.search(tag_indent, item, re.IGNORECASE):
 					tmp = ("\t" * indent_level) + item
 					indent_level = indent_level + 1
 				# if raw, flatten! no indenting!
-				elif re.search(tag_raw_flat_opening, item):
+				elif re.search(tag_raw_flat_opening, item, re.IGNORECASE):
 					tmp = item
 					is_block_raw = True
-				elif re.search(tag_raw_flat_closing, item):
+				elif re.search(tag_raw_flat_closing, item, re.IGNORECASE):
 					tmp = item
 					is_block_raw = False
 				else:
