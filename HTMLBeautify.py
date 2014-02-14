@@ -1,9 +1,9 @@
 #!/usr/bin/python
 #
-# HTMLBeautify (for Sublime Text 2) v0.6
+# HTMLBeautify (for Sublime Text 2 & 3) v0.7
 # (Inspired by fhtml.pl by John Watson)
 # by Ross A. Reyman
-# 05 March 2013
+# 13 February 2014
 # url:			http://reyman.name/
 # e-mail:		ross[at]reyman[dot]name
 
