@@ -29,11 +29,11 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 			tag_pos_inline 			= settings.get('tag_pos_inline')
 
 			# these tags use raw code and should flatten to col1
-			# tabs will be removed inside these tags! use spaces for spacing in needed!
+			# tabs will be removed inside these tags! use spaces for spacing if needed!
 			tag_raw_flat_opening		= "<pre"
 			tag_raw_flat_closing		= "</pre"
 
-			# detrmine if applying to a selection or applying to the whole document
+			# determine if applying to a selection or applying to the whole document
 			if self.view.sel()[0].empty():
 				# nothing selected: process the entire file
 				region = sublime.Region(0, self.view.size())
