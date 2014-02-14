@@ -1,13 +1,13 @@
-# HTMLBeautify (for Sublime Text 2) v0.6
+# HTMLBeautify (for Sublime Text 2 & 3) v0.7
 - (Inspired by fhtml.pl by John Watson)
 - by Ross A. Reyman
-- 11 April 2013
+- 13 February 2014
 - url:			[http://reyman.name/](http://reyman.name/)
 - e-mail:		ross[at]reyman[dot]name
 
 ---
 
-A plugin for [Sublime Text 2](http://sublimetext.com/2), that formats (indents) HTML source code.
+A plugin for [Sublime Text ](http://sublimetext.com/), that formats (indents) HTML source code.
 It makes code easier for humans to read.
 
 ---
