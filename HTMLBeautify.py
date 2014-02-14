@@ -36,7 +36,7 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 			# detrmine if applying to a selection or applying to the whole document
 			if self.view.sel()[0].empty():
 				# nothing selected: process the entire file
-				region = sublime.Region(0L, self.view.size())
+				region = sublime.Region(0, self.view.size())
 				sublime.status_message('Beautifying Entire File')
 				rawcode = self.view.substr(region)
 				# print region
