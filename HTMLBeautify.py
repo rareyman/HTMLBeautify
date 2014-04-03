@@ -1,11 +1,15 @@
 #!/usr/bin/python
 #
-# HTMLBeautify (for Sublime Text 2 & 3) v0.7
+# HTMLBeautify (for Sublime Text 2 & 3) v0.8
 # (Inspired by fhtml.pl by John Watson)
 # by Ross A. Reyman
-# 13 February 2014
+# 2 April 2014
 # url:			http://reyman.name/
 # e-mail:		ross[at]reyman[dot]name
+#
+# REVISION HISTORY:
+#  *cbr 04/14 - compile the regexs for speed
+#				unindent properly when closing tags are stacked on the same line (mis-matched tags will probably break this)
 
 import sublime, sublime_plugin, re
 
@@ -16,22 +20,30 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 			settings = sublime.load_settings('HTMLBeautify.sublime-settings')
 
 			# the contents of these tags will not be indented
-			ignored_tag_opening = settings.get('ignored_tag_opening')
-			ignored_tag_closing = settings.get('ignored_tag_closing')
+			ignored_tag_opening 		= settings.get('ignored_tag_opening')
+			ignored_tag_closing 		= settings.get('ignored_tag_closing')
+
+			ignored_tag_opening_re 		= re.compile(ignored_tag_opening, re.IGNORECASE)
+			ignored_tag_closing_re 		= re.compile(ignored_tag_closing, re.IGNORECASE)
 
 			# the content of these tags will be indented
 			tag_indent 					= settings.get('tag_indent')
+			tag_indent_re				= re.compile(tag_indent, re.IGNORECASE)
 
 			# these tags will be un-indented
 			tag_unindent 				= settings.get('tag_unindent')
+			tag_unindent_re 			= re.compile(tag_unindent, re.IGNORECASE)
 
 			# these tags may occur inline and should not indent/unindent
-			tag_pos_inline 			= settings.get('tag_pos_inline')
+			tag_pos_inline 				= settings.get('tag_pos_inline')
+			tag_pos_inline_re 			= re.compile(tag_pos_inline, re.IGNORECASE)
 
 			# these tags use raw code and should flatten to col1
 			# tabs will be removed inside these tags! use spaces for spacing if needed!
 			tag_raw_flat_opening		= "<pre"
 			tag_raw_flat_closing		= "</pre"
+			tag_raw_flat_opening_re 	= re.compile(tag_raw_flat_opening)
+			tag_raw_flat_closing_re 	= re.compile(tag_raw_flat_closing)
 
 			# determine if applying to a selection or applying to the whole document
 			if self.view.sel()[0].empty():
@@ -68,17 +80,17 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 				if item == "":
 					continue
 				# ignore raw code
-				if re.search(tag_raw_flat_closing, item, re.IGNORECASE):
+				if tag_raw_flat_closing_re.search(item):
 					tmp = item.strip()
 					is_block_raw = False
-				elif re.search(tag_raw_flat_opening, item, re.IGNORECASE):
+				elif tag_raw_flat_opening_re.search(item):
 					tmp = item.strip()
 					is_block_raw = True
 				# find ignored blocks and retain indentation, otherwise: strip whitespace
-				if re.search(ignored_tag_closing, item, re.IGNORECASE):
+				if ignored_tag_closing_re.search(item):
 					tmp = item.strip()
 					is_block_ignored = False
-				elif re.search(ignored_tag_opening, item, re.IGNORECASE):
+				elif ignored_tag_opening_re.search(item):
 					# count tabs used in ignored tags (for use later)
 					ignored_block_tab_count = item.count('\t')
 					tmp = item.strip()
@@ -110,24 +122,30 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 			is_block_raw = False
 
 			for item in rawcode_flat_list:
+				# match_end_pos denotes where we should start looking for dangling closing tags
+				match_end_pos = 0
+
 				# if a one-line, inline tag, just process it
-				if re.search(tag_pos_inline, item, re.IGNORECASE):
+				if tag_pos_inline_re.search(item):
+					match_end_pos = tag_pos_inline_re.search(item).end()
 					tmp = ("\t" * indent_level) + item
 				# if unindent, move left
-				elif re.search(tag_unindent, item, re.IGNORECASE):
+				elif tag_unindent_re.search(item):
+					match_end_pos = tag_unindent_re.search(item).end()
 					indent_level = indent_level - 1
 					tmp = ("\t" * indent_level) + item
 				# if indent, move right
-				elif re.search(tag_indent, item, re.IGNORECASE):
-					tmp = ("\t" * indent_level) + item
+				elif tag_indent_re.search(item):
+					match_end_pos = tag_indent_re.search(item).end()
 					indent_level = indent_level + 1
+					tmp = ("\t" * indent_level) + item
 				# if raw, flatten! no indenting!
-				elif re.search(tag_raw_flat_opening, item, re.IGNORECASE):
-					tmp = item
+				elif tag_raw_flat_opening_re.search(item):
 					is_block_raw = True
-				elif re.search(tag_raw_flat_closing, item, re.IGNORECASE):
 					tmp = item
+				elif tag_raw_flat_closing_re.search(item):
 					is_block_raw = False
+					tmp = item
 				else:
 					if is_block_raw == True:
 						tmp = item
@@ -135,11 +153,20 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 					else:
 						tmp = ("\t" * indent_level) + item
 
+				# we don't want to loop on this line forever
+				if match_end_pos == 0:
+					match_end_pos = len(item)
 				beautified_code = beautified_code + tmp + '\n'
-				
+
+				# check for lingering closing tags
+				while tag_unindent_re.search(item, match_end_pos) and indent_level > 0:
+					# get the end for the next closing tag
+					match_end_pos = tag_unindent_re.search(item, match_end_pos).end()
+					indent_level = indent_level - 1
+
 			# remove leading and trailing white space
 			beautified_code = beautified_code.strip()
-            	
+
 			# print beautified_code
 
 			# replace the code in Sublime Text
