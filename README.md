@@ -1,7 +1,8 @@
-# HTMLBeautify (for Sublime Text 2 & 3) v0.7
+# HTMLBeautify v0.8
+## SublimeText (version 2 & 3)
 - (Inspired by fhtml.pl by John Watson)
 - by Ross A. Reyman
-- 13 February 2014
+- 2 April 2014
 - url:			[http://reyman.name/](http://reyman.name/)
 - e-mail:		ross[at]reyman[dot]name
 
@@ -27,20 +28,20 @@ It makes code easier for humans to read.
         `<!-- this comment is ok too -->`
 	- (TODO: Fix this!)
 
-- This script uses `\t` characters to create indentation levels and spacing—ST2 appears to honor whether the user prefers spaces or tabs in ST2 settings and adjusts accordingly.
+- This script uses `\t` characters to create indentation levels and spacing—ST appears to honor whether the user prefers spaces or tabs in ST settings and adjusts accordingly.
 - Use `tag_pos_inline` setting to define tags that _might_ appear on one line.
-- Windows Users: You **must** restart Sublime Text 2 to complete the installation.
+- Windows Users: You **must** restart Sublime Text to complete the installation.
 
 ## Installation (Package Control)
-If you have [Package Control](http://wbond.net/sublime_packages/package_control/installation) installed in Sublime Text 2:
+If you have [Package Control](http://wbond.net/sublime_packages/package_control/installation) installed in Sublime Text:
 
 - Open the Command Palette (Tools > Command Palette…)
 - Search for and choose "Package Control: Install Package" (give it a few seconds to return a list of available packages)
 - Search for "HTMLBeautify" and install.
-- Windows users will need to restart Sublime Text 2 to finish the installation.
+- Windows users will **need** to restart Sublime Text to finish the installation.
 
 ## Installation (Manual)
-- Download the zip, re-name resulting folder to: `HTMLBeautify`, then put the folder into your Sublime Text 2 Packages folder.
+- Download the zip, re-name resulting folder to: `HTMLBeautify`, then put the folder into your Sublime Text Packages folder.
 
 ## Usage
 - Open a file containing HTML.
