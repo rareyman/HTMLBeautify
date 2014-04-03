@@ -1,5 +1,5 @@
-# HTMLBeautify for Sublime Text 2
-HTMLBeautify for Sublime Text 2 by Ross A. Reyman is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
+# HTMLBeautify for Sublime Text
+HTMLBeautify for Sublime Text by Ross A. Reyman is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
 
 ---
 ## You are free:
