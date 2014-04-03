@@ -1,6 +1,7 @@
 #!/usr/bin/python
 #
-# HTMLBeautify (for Sublime Text 2 & 3) v0.8
+# HTMLBeautify v0.8
+# Sublime Text (2 & 3)
 # (Inspired by fhtml.pl by John Watson)
 # by Ross A. Reyman
 # 2 April 2014
