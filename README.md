@@ -1,4 +1,4 @@
-# HTMLBeautify v0.7
+# HTMLBeautify v0.81
 ## SublimeText (version 2 & 3)
 - (Inspired by fhtml.pl by John Watson)
 - by Ross A. Reyman
@@ -14,7 +14,7 @@ It makes code easier for humans to read.
 ---
 
 ## Back to Version 0.7
-An error in the indentation logic occurred when updating to version 0.8. I am rolling this back to 0.7 until I have time to investigate this further.
+An error in the indentation logic occurred when updating to version 0.8. I am rolling this back to 0.7 (and renaming this to 0.81 until I have time to investigate this further.
 
 ## Notes
 - This script assumes an effort has been made by the user to expand tags to different lines. This script will **not**  automatically expand minimized/compressed code—it will only try to “clean-up” code that needs to be re-indented

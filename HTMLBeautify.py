@@ -1,9 +1,10 @@
 #!/usr/bin/python
 #
-# HTMLBeautify (for Sublime Text 2 & 3) v0.7
+# HTMLBeautify (for Sublime Text 2 & 3) v0.81
+# Same as 0.7
 # (Inspired by fhtml.pl by John Watson)
 # by Ross A. Reyman
-# 13 February 2014
+# 14 April 2014
 # url:			http://reyman.name/
 # e-mail:		ross[at]reyman[dot]name
 
@@ -136,10 +137,10 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 						tmp = ("\t" * indent_level) + item
 
 				beautified_code = beautified_code + tmp + '\n'
-				
+
 			# remove leading and trailing white space
 			beautified_code = beautified_code.strip()
-            	
+
 			# print beautified_code
 
 			# replace the code in Sublime Text
