@@ -1,8 +1,8 @@
-# HTMLBeautify v0.8
+# HTMLBeautify v0.7
 ## SublimeText (version 2 & 3)
 - (Inspired by fhtml.pl by John Watson)
 - by Ross A. Reyman
-- 2 April 2014
+- 14 April 2014
 - url:			[http://reyman.name/](http://reyman.name/)
 - e-mail:		ross[at]reyman[dot]name
 
@@ -12,6 +12,9 @@ A plugin for [Sublime Text ](http://sublimetext.com/), that formats (indents) HT
 It makes code easier for humans to read.
 
 ---
+
+## Back to Version 0.7
+An error in the indentation logic occurred when updating to version 0.8. I am rolling this back to 0.7 until I have time to investigate this further.
 
 ## Notes
 - This script assumes an effort has been made by the user to expand tags to different lines. This script will **not**  automatically expand minimized/compressed code—it will only try to “clean-up” code that needs to be re-indented
