@@ -29,6 +29,9 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 			# these tags may occur inline and should not indent/unindent
 			tag_pos_inline 			= settings.get('tag_pos_inline')
 
+			# remove extra line (empty)
+			remove_extraline 			= settings.get('remove_extraline')
+
 			# these tags use raw code and should flatten to col1
 			# tabs will be removed inside these tags! use spaces for spacing if needed!
 			tag_raw_flat_opening		= "<pre"
@@ -66,7 +69,7 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 			for item in rawcode_list:
 				# print item.strip()
 				# remove extra "spacer" lines
-				if item == "":
+				if item == "" and remove_extraline:
 					continue
 				# ignore raw code
 				if re.search(tag_raw_flat_closing, item, re.IGNORECASE):
