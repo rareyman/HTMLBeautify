@@ -26,8 +26,11 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 			# these tags will be un-indented
 			tag_unindent 				= settings.get('tag_unindent')
 
+			# the line will be un-indented and next line will be indented
+			tag_unindent_line			= settings.get('tag_unindent_line')
+
 			# these tags may occur inline and should not indent/unindent
-			tag_pos_inline 			= settings.get('tag_pos_inline')
+			tag_pos_inline 				= settings.get('tag_pos_inline')
 
 			# remove extra line (empty)
 			remove_extraline 			= settings.get('remove_extraline')
@@ -121,6 +124,8 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 				elif re.search(tag_unindent, item, re.IGNORECASE):
 					indent_level = indent_level - 1
 					tmp = ("\t" * indent_level) + item
+				elif re.search(tag_unindent_line, item, re.IGNORECASE):
+					tmp = ("\t" * (indent_level - 1)) + item
 				# if indent, move right
 				elif re.search(tag_indent, item, re.IGNORECASE):
 					tmp = ("\t" * indent_level) + item
