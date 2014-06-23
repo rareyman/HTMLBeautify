@@ -49,7 +49,7 @@ If you have [Package Control](http://wbond.net/sublime_packages/package_control/
 ## Usage
 - Open a file containing HTML.
 - Select HTML code you want to beautify. (If no selection is made the plugin will run on the whole file.)
-- Use `super+alt+shift+f` on OS X (`ctrl+alt+shift+f` on Windows) to run HTMLBeautify—or use HTMLBeautify from the Edit menu.
+- Use `super+alt+f` on OS X (`ctrl+alt+f` on Windows) to run HTMLBeautify—or use HTMLBeautify from the Edit menu.
 - You can test the script with `HTMLBeautifyTest.html`: an HTML file with wacky indenting so you to see how this script works.
 
 ## Settings
@@ -60,8 +60,11 @@ You can configure which tags should be processed with this script:
 
 - `tag_indent` : If one of these opening tags is encountered, the contents (next line) will be indented by one level.
 - `tag_unindent` : If one of these closing tags is encountered, the next line will be un-indented one level.
+- `tag_unindent_line` : If one of these closing tags is encountered, this line is un-indented one level.
 
 - `tag_pos_inline` : These are special “one line” tags that open and close on the same line, so indenting should be ignored.
+
+- `remove_extraline` : Set true to remove empty line.
 
 ## Disclaimer
 This script has been tested for basic HTML coding situations, but your mileage may vary—use with caution if using this in a production environment. (Please report bugs or contribute corrections to the script!) Although the script does not remove or modify code directly (it only attempts to adjust indentation levels), be sure to test this script throughly to make sure it works as expected! The author is not responsible for any bugs that might be introduced to your HTML. :)

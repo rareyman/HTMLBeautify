@@ -1,6 +1,9 @@
-[
-	{
-		"keys": ["ctrl+alt+shift+f"],
-		"command": "html_beautify"
-	}
-]
+[{
+	"keys": ["ctrl+alt+f"],
+	"command": "html_beautify",
+	"context": [{
+		"key": "selector",
+		"operator": "equal",
+		"operand": "text.html,text.html.twig,text.twig,source.html,source.html.twig,source.twig"
+	}]
+}]
