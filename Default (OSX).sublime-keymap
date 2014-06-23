@@ -1,5 +1,5 @@
 [{
-	"keys": ["super+alt+shift+f"],
+	"keys": ["super+alt+f"],
 	"command": "html_beautify",
 	"context": [{
 		"key": "selector",
