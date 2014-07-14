@@ -55,7 +55,7 @@ If you have [Package Control](http://wbond.net/sublime_packages/package_control/
 ## Usage
 - Open a file containing HTML.
 - Select HTML code you want to beautify. (If no selection is made the plugin will run on the whole file.)
-- Use `super+alt+f` on OS X (`ctrl+alt+f` on Windows) to run HTMLBeautify—or use HTMLBeautify from the Edit menu.
+- Use the appropriate key command to run HTMLBeautify—or use HTMLBeautify from the Edit menu.
 - You can test the script with `HTMLBeautifyTest.html`: an HTML file with wacky indenting so you to see how this script works.
 
 ## Settings
