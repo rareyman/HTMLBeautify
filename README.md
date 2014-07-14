@@ -77,7 +77,7 @@ You can create your own custom keymap (key command/macro) in your keymap file: `
 
 <pre>
 {
-	"keys": ["super+alt+shift+f"], // <-- create your own key command combination here!
+	"keys": ["super+alt+shift+f"], //  create your own key command combination here!
 	"command": "html_beautify", // command that executes html_beautify
 	"context": [{
 		// these options ensure that the command is executed in the right files/context
