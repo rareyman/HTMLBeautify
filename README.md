@@ -1,8 +1,8 @@
-# HTMLBeautify v0.81
+# HTMLBeautify v0.82
 ## SublimeText (version 2 & 3)
 - (Inspired by fhtml.pl by John Watson)
 - by Ross A. Reyman
-- 14 April 2014
+- 14 July 2014
 - url:			[http://reyman.name/](http://reyman.name/)
 - e-mail:		ross[at]reyman[dot]name
 
@@ -13,8 +13,14 @@ It makes code easier for humans to read.
 
 ---
 
-## Back to Version 0.7
-An error in the indentation logic occurred when updating to version 0.8. I am rolling this back to 0.7 (and renaming this to 0.81 until I have time to investigate this further.
+## Key Commands Reverted Back to Original
+Due to a conflict with other keymaps in Sublime Text, I am reverting the keymap back to the original setting:
+
+- Mac OS X: `Command-Option-Shift-F`
+- Windows: `Control-Alt-Shift-F`
+- Linux: `Control-Alt-Shift-F`
+
+(To change this, see instructions later in this README…)
 
 ## Notes
 - This script assumes an effort has been made by the user to expand tags to different lines. This script will **not**  automatically expand minimized/compressed code—it will only try to “clean-up” code that needs to be re-indented
@@ -65,6 +71,27 @@ You can configure which tags should be processed with this script:
 - `tag_pos_inline` : These are special “one line” tags that open and close on the same line, so indenting should be ignored.
 
 - `remove_extraline` : Set true to remove empty line.
+
+## Changing the Key Binding
+You can create your own custom keymap (key command/macro) in your keymap file: `Packages/User/Default[OS].sublime-keymap` 
+
+<pre>
+[…
+{
+	"keys": ["super+alt+shift+f"], // <-- create your own key command combination here!
+	"command": "html_beautify", // command that executes html_beautify
+	"context": [{
+		// these options ensure that the command is executed in the right files/context
+		"key": "selector",
+		"operator": "equal",
+		"operand": "text.html,text.html.twig,text.twig,source.html,source.html.twig,source.twig"
+	}]
+}
+…]
+</pre>
+
+For more details:  [Sublime Text Unofficial Documentation: Key Bindings](http://sublime-text-unofficial-documentation.readthedocs.org/en/sublime-text-2/reference/key_bindings.html) 
+
 
 ## Disclaimer
 This script has been tested for basic HTML coding situations, but your mileage may vary—use with caution if using this in a production environment. (Please report bugs or contribute corrections to the script!) Although the script does not remove or modify code directly (it only attempts to adjust indentation levels), be sure to test this script throughly to make sure it works as expected! The author is not responsible for any bugs that might be introduced to your HTML. :)
