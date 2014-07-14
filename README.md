@@ -76,7 +76,6 @@ You can configure which tags should be processed with this script:
 You can create your own custom keymap (key command/macro) in your keymap file: `Packages/User/Default[OS].sublime-keymap` 
 
 <pre>
-[…
 {
 	"keys": ["super+alt+shift+f"], // <-- create your own key command combination here!
 	"command": "html_beautify", // command that executes html_beautify
@@ -87,7 +86,6 @@ You can create your own custom keymap (key command/macro) in your keymap file: `
 		"operand": "text.html,text.html.twig,text.twig,source.html,source.html.twig,source.twig"
 	}]
 }
-…]
 </pre>
 
 For more details:  [Sublime Text Unofficial Documentation: Key Bindings](http://sublime-text-unofficial-documentation.readthedocs.org/en/sublime-text-2/reference/key_bindings.html) 
