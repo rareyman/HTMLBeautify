@@ -18,10 +18,7 @@
 
 	// these tags can sometimes be on one line (see example below)
 	"tag_pos_inline":
-	"\\{% if.*endif %\\}|\\{% block.*endblock %\\}|<link.*/>|<link.*\">|<meta.*/>|<script.*</script>|<div.*</div>|<a.*</a>|<li.*</li>|<dt.*</dt>|<dd.*</dd>|<th.*</th>|<td.*</td>|<legend.*</legend>|<label.*</label>|<option.*</option>|<input.*/>|<input.*\">|<!--.*-->",
-
-	// set true to remove empty line
-	"remove_extraline": true
+	"\\{% if.*endif %\\}|\\{% block.*endblock %\\}|<link.*/>|<link.*\">|<link.*>|<meta.*/>|<script.*</script>|<div.*</div>|<a.*</a>|<li.*</li>|<dt.*</dt>|<dd.*</dd>|<th.*</th>|<td.*</td>|<legend.*</legend>|<label.*</label>|<option.*</option>|<input.*/>|<input.*\">|<!--.*-->",
 
 	// example (li):
 	// <ul>
@@ -31,4 +28,16 @@
 	// 	</li>
 	// </ul>
 
+	// these tags use raw code and should flatten to column 1
+	// tabs will be removed inside these tags! use spaces for spacing if needed!
+	// example: "<pre|<script" and "</pre|</script"
+	// flatten starting with this tag...
+	"tag_raw_flat_opening":
+	"<pre",
+	// ...stop flattening when you encounter this tag
+	"tag_raw_flat_closing":
+	"</pre",
+
+	// set true to remove empty line
+	"remove_extraline": true
 }

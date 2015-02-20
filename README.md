@@ -1,8 +1,8 @@
-# HTMLBeautify v0.82
+# HTMLBeautify v0.85
 ## SublimeText (version 2 & 3)
 - (Inspired by fhtml.pl by John Watson)
 - by Ross A. Reyman
-- 14 July 2014
+- 20 February 2015
 - url:			[http://reyman.name/](http://reyman.name/)
 - e-mail:		ross[at]reyman[dot]name
 

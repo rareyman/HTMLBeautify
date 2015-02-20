@@ -1,10 +1,9 @@
 #!/usr/bin/python
 #
-# HTMLBeautify (for Sublime Text 2 & 3) v0.81
-# Same as 0.7
+# HTMLBeautify (for Sublime Text 2 & 3) v0.85 (Antonio Gates Edition)
 # (Inspired by fhtml.pl by John Watson)
 # by Ross A. Reyman
-# 14 April 2014
+# 20 February 2015
 # url:			http://reyman.name/
 # e-mail:		ross[at]reyman[dot]name
 
@@ -35,10 +34,9 @@ class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 			# remove extra line (empty)
 			remove_extraline 			= settings.get('remove_extraline')
 
-			# these tags use raw code and should flatten to col1
-			# tabs will be removed inside these tags! use spaces for spacing if needed!
-			tag_raw_flat_opening		= "<pre"
-			tag_raw_flat_closing		= "</pre"
+			# flatten tags and contents to column 1, removing tabs!
+			tag_raw_flat_opening 			= settings.get('tag_raw_flat_opening')
+			tag_raw_flat_closing 			= settings.get('tag_raw_flat_closing')
 
 			# determine if applying to a selection or applying to the whole document
 			if self.view.sel()[0].empty():
