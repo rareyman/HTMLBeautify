@@ -24,6 +24,7 @@ Due to a conflict with other keymaps in Sublime Text, I am reverting the keymap 
 
 ## Notes
 - This script assumes an effort has been made by the user to expand tags to different lines. This script will **not**  automatically expand minimized/compressed code—it will only try to “clean-up” code that needs to be re-indented
+  - However, you can use multiple cursors ([Find All][1]) or use [Replace][2] on the beginning of a tag `<` to put every tag on a new line before applying beautify, which will help in this case.
 - Currently, this script chokes a bit with inline comments.
 	- For example:
 
@@ -94,3 +95,5 @@ For more details:  [Sublime Text Unofficial Documentation: Key Bindings](http://
 ## Disclaimer
 This script has been tested for basic HTML coding situations, but your mileage may vary—use with caution if using this in a production environment. (Please report bugs or contribute corrections to the script!) Although the script does not remove or modify code directly (it only attempts to adjust indentation levels), be sure to test this script throughly to make sure it works as expected! The author is not responsible for any bugs that might be introduced to your HTML. :)
 
+[1]: https://www.sublimetext.com/docs/2/multiple_selection_with_the_keyboard.html
+[2]: http://sublime-text-unofficial-documentation.readthedocs.org/en/latest/search_and_replace/search_and_replace.html#replacing-text
