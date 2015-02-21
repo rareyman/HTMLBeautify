@@ -1,16 +1,16 @@
 {
 	// indicates tags whose contents should be ignored (add more as needed)
-	"ignored_tag_opening" : "<script|<style|<!--|{\\*|<\\?php",
+	"ignored_tag_opening" : "<!--|{\\*|<\\?php",
 	// indicates when to stop ignoring
-	"ignored_tag_closing" : "</script|</style|-->|\\*}|\\?>",
+	"ignored_tag_closing" : "-->|\\*}|\\?>",
 
 	// the contents of these tag blocks will be indented (add/remove as desired)
 	"tag_indent":
-	"\\{% (if|for|block|else|spaceless)|<html|<head|<body|<div|<a|<nav|<ul|<ol|<dl|<li|<table|<thead|<tbody|<tr|<th|<td|<blockquote|<select|<form|<option|<optgroup|<fieldset|<legend|<label|<header|<section|<aside|<footer|<figure|<video",
+	"\\{% (if|for|block|else|spaceless)|<html|<head|<body|<div|<a|<nav|<ul|<ol|<dl|<li|<table|<thead|<tbody|<tr|<th|<td|<blockquote|<select|<form|<option|<optgroup|<fieldset|<legend|<label|<header|<section|<aside|<footer|<figure|<video|<script|<style|<span|<p|<g|<svg",
 
 	// this signals when tags should be unindented (see tags above)
 	"tag_unindent":
-	"\\{% end|</html|</head|</body|</div|</a|</nav|</ul|</ol|</dl|</li|</table|</thead|</tbody|</tr|</th|</td|</blockquote|</select|</form|</option|</optgroup|</fieldset|</legend|</label|</header|</section|</aside|</footer|</figure|</video",
+	"\\{% end|</html|</head|</body|</div|</a|</nav|</ul|</ol|</dl|</li|</table|</thead|</tbody|</tr|</th|</td|</blockquote|</select|</form|</option|</optgroup|</fieldset|</legend|</label|</header|</section|</aside|</footer|</figure|</video|</script|</style|</span|</p|</g|</svg",
 
 	// these tags should be unindented and next line will be indented
 	"tag_unindent_line":
@@ -18,7 +18,7 @@
 
 	// these tags can sometimes be on one line (see example below)
 	"tag_pos_inline":
-	"\\{% if.*endif %\\}|\\{% block.*endblock %\\}|<link.*/>|<link.*\">|<link.*>|<meta.*/>|<script.*</script>|<div.*</div>|<a.*</a>|<li.*</li>|<dt.*</dt>|<dd.*</dd>|<th.*</th>|<td.*</td>|<legend.*</legend>|<label.*</label>|<option.*</option>|<input.*/>|<input.*\">|<!--.*-->",
+	"\\{% if.*endif %\\}|\\{% block.*endblock %\\}|<link.*/>|<link.*\">|<link.*>|<meta.*/>|<script.*</script>|<div.*</div>|<a.*</a>|<li.*</li>|<dt.*</dt>|<dd.*</dd>|<th.*</th>|<td.*</td>|<legend.*</legend>|<label.*</label>|<option.*</option>|<input.*/>|<input.*\">|<span.*</span>|<p.*</p>|<path.*/>|<!--.*-->",
 
 	// example (li):
 	// <ul>
