@@ -6,11 +6,11 @@
 
 	// the contents of these tag blocks will be indented (add/remove as desired)
 	"tag_indent":
-	"\\{% (if|for|block|else|spaceless)|<html|<head|<body|<div|<a|<nav|<ul|<ol|<dl|<li|<table|<thead|<tbody|<tr|<th|<td|<blockquote|<select|<form|<option|<optgroup|<fieldset|<legend|<label|<header|<section|<aside|<footer|<figure|<video|<span|<p|<g|<svg",
+	"\\{% (if|for|block|else|spaceless)|<html|<head|<body|<div|<a|<nav|<ul|<ol|<dl|<li|<table|<thead|<tbody|<tr|<th|<td|<blockquote|<select|<form|<option|<optgroup|<fieldset|<legend|<label|<header|<main|<section|<aside|<footer|<figure|<video|<span|<p|<g|<svg",
 
 	// this signals when tags should be unindented (see tags above)
 	"tag_unindent":
-	"\\{% end|</html|</head|</body|</div|</a|</nav|</ul|</ol|</dl|</li|</table|</thead|</tbody|</tr|</th|</td|</blockquote|</select|</form|</option|</optgroup|</fieldset|</legend|</label|</header|</section|</aside|</footer|</figure|</video|</span|</p|</g|</svg",
+	"\\{% end|</html|</head|</body|</div|</a|</nav|</ul|</ol|</dl|</li|</table|</thead|</tbody|</tr|</th|</td|</blockquote|</select|</form|</option|</optgroup|</fieldset|</legend|</label|</header|</main|</section|</aside|</footer|</figure|</video|</span|</p|</g|</svg",
 
 	// these tags should be unindented and next line will be indented
 	"tag_unindent_line":
