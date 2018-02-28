@@ -39,5 +39,8 @@
 	"</pre",
 
 	// set true to remove empty line
-	"remove_extraline": true
+	"remove_extraline": true,
+
+	// format on save
+	"format_on_save": false
 }
