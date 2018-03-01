@@ -9,11 +9,21 @@
 
 import sublime, sublime_plugin, re
 
+settings = None
+def plugin_loaded():
+	global settings
+
+	# this file contains the tags that will be indented/unindented, etc.
+	settings = sublime.load_settings('HTMLBeautify.sublime-settings')
+
+class PreSaveFormatListener(sublime_plugin.EventListener):
+	"""Event listener to run HtmlBeautify during the presave event"""
+	def on_pre_save(self, view):
+		if settings.get('format_on_save') and view.file_name().lower().endswith('.html'):
+			view.run_command('html_beautify')
+
 class HtmlBeautifyCommand(sublime_plugin.TextCommand):
 		def run(self, edit):
-
-			# this file contains the tags that will be indented/unindented, etc.
-			settings = sublime.load_settings('HTMLBeautify.sublime-settings')
 
 			# the contents of these tags will not be indented
 			ignored_tag_opening = settings.get('ignored_tag_opening')
